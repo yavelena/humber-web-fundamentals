@@ -1,14 +1,17 @@
 :root {
     --clr-neutral-100: #FAFAFA;
     --clr-neutral-200: #F3F3F1;
-    --clr-neutral-300: #E2E1DF;
-    --clr-neutral-400: #D3D2CF;
+    --clr-neutral-300: #D3D2CF;
+    --clr-neutral-400: #b4b3b1;
+    --clr-neutral-450: #949491;
     --clr-neutral-500: #6E6C68;
     --clr-neutral-900: #0D0D0D;
 
     --clr-body: var(--clr-neutral-500);
     --clr-heading: var(--clr-neutral-900);
-    --clr-border: var(--clr-neutral-400);
+    --clr-pale-300: var(--clr-neutral-400);
+    --clr-pale-400: var(--clr-neutral-450);
+    --clr-border: var(--clr-neutral-300);
 
     --clr-rose: #CB4D62;
     --clr-accent-400: var(--clr-rose);
@@ -275,7 +278,17 @@ header{
     flex-direction: column;
     gap: var(--gap-400);
 }
-
+.project-techs{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: var(--fs-300);
+    color: var(--clr-pale-400);
+}
+.project-role{
+    color: var(--clr-pale-300);
+    text-transform: uppercase;
+}
 .project-card .button
 {
     margin-top: auto;
