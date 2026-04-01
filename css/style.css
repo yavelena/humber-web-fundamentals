@@ -357,6 +357,14 @@ header{
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
+.project-card
+{
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.project-card img
+{
+    transition: transform 0.35s ease;
+}
 .project-techs{
     display: flex;
     flex-wrap: wrap;
@@ -368,11 +376,24 @@ header{
     color: var(--clr-pale-300);
     text-transform: uppercase;
 }
+
 .project-card .button
 {
     margin-top: auto;
     align-self: flex-start;
+    transition: transform 0.25s ease, background-color 0.25s ease;
 }
+.project-card:hover
+{
+    transform: translateY(-2px);
+}
+.project-card:hover img
+{
+    transform: scale(1.03);
+}
+
+
+
 
 
 /* -------  CONTACTS ---------*/
