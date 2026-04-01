@@ -3,29 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello, World!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Welcome to my site!</title>
 </head>
-<body>
+<body class="base-layout">
+    <!-- HEADER: Logo + Top menu-->
     <header>
-        <h1>Hi! My name is Elena</h1>
-        <p><img src="images/yavelena-selfie.png" height="200" alt="Elena Ieshchenko photo"></p>
+        <a href="/" class="logo">E.E.</a>
+        <nav>
+            <ul class="horizontal-menu">
+                <li><a class="hmenu-active-item" href="#">Home</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Expertise</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
     </header>
+    
     <main>
-        <section>
-            <h2>Contact me</h2>
-                <formf action="" method="post" enctype="text/plain" onsubmit="event.preventDefault();">
-                    <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name"><br>
-                    
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email"><br>
-                    
-                    <label for="message">Message:</label><br>
-                    <textarea id="message" name="message"></textarea><br>
-                    
-                    <input type="submit" value="Send">
-                </formf>
+
+       <!-- Two-cols HERO -->
+        <section id="hero" class="adaptive-flex">
+            
+            <div class="col-left">
+                <div class="hero-header">
+                    <img id="avatar" src="img/yavelena-selfie.png" alt="Elena Eshchenko" />
+                    <p class="section-number">[01] the nexus</p>
+                </div>
+                <div class="description">
+                    <h1>Elena<br>Eshchenko</h1>
+                    <p>Full-Stack Software Developer</p>
+                    <p>Building resilient systems from foundation to interface. <br> Architecture-first. Performance-driven.</p>
+                    <a href="#contact-form" class="button">INITIATE_CONTACT →</a>
+                </div>
+            </div>
+            
+            <div class="col-right">
+                <p>
+                    <span class="accent-text">// FRONTEND</span> <br>
+                    <span class="tech-list"> 
+                        <span>React</span>
+                        <span>Next.js</span>
+                        <span>TypeScript</span>
+                        <span>HTML5</span> 
+                        <span>CSS3</span>
+                    </span>
+                </p>
+                <p>
+                    <span class="accent-text">// BACKEND</span> <br>
+                    <span class="tech-list">
+                        <span>C#</span>
+                        <span>.NET</span>
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>SQL</span>
+                    </span>
+                </p>
+                <p>
+                    <span class="accent-text">// DEVOPS</span> <br>
+                    <span class="tech-list">
+                        <span>Docker</span>
+                        <span>Kubernetes</span>
+                        <span>CI/CD</span>
+                        <span>AWS</span>
+                        <span>Azure</span>
+                    </span>
+                </p>
+                <p>
+                    <span class="accent-text">// TOOLS</span> <br>
+                    <span class="tech-list">
+                        <span>Git</span>
+                        <span>Figma</span>
+                        <span>REST APIs</span>
+                        <span>Testing</span>
+                        <span>Agile</span>
+                    </span>
+                </p>
+
+            </div>
+        </section>
+        
+        <!-- Featured Projects-->
+        <section id="featured-projects">
+            <p class="section-number">[02] repository</p>
+            <h2>Featured Projects</h2>
+            <p>Selected engineering projects demonstrationg full-steck capabilities across diverse problem  domains.</p>
+            
+            <div class="projects">
+                <article class="project-card">
+                    <img src="img/architecture1.png" alt="Project 1" />
+                    <h3>Cloud Infrastructure Dashboard</h3>
+                    <p>Real-time monitoring platform for distributed microservices. Built for scale with live metrics, alert systems, and automated incident response.</p>
+                    <p class="techs">React, Node.js, AWS</p>
+                    <p class="role">Full-Stack Developer • <span class="year">2025</span></p>
+                    <a href="#" class="button">VIEW PROJECT →</a>
+                </article>
+                
+                <article class="project-card">
+                    <img src="img/architecture2.png" alt="Project 2" />
+                    <h3>AI-Powered Code Review Tool</h3>
+                    <p>A machine learning-based code analysis tool that provides real-time feedback and suggestions to developers, improving code quality and reducing review time.</p>
+                    <p class="techs">Python, TensorFlow, Docker</p>
+                    <p class="role">Lead Developer • <span class="year">2024</span></p>
+                    <a href="#" class="button">VIEW PROJECT →</a>   
+                </article>
+
+                <article class="project-card">
+                    <img src="img/architecture3.png" alt="Project 3" />
+                    <h3>Project Three</h3>
+                    <p>An e-commerce platform with a microservices architecture, deployed on AWS.</p>
+                    <p class="techs">Python, Django, AWS</p>
+                    <p class="role">Backend Developer • <span class="year">2023</span></p>
+                    <a href="#" class="button">VIEW PROJECT →</a> 
+
+                </article>
+            </div>
+        
+        </section> 
+
+
+       <!-- Contact Form-->
+        <section id="contact-form">
+            <p class="section-number">[03] contact</p>
+            <h2>Get in Touch</h2>
+            <p>Initiate a connection. Whether it's a project, collaboration, or conversation — the channel is open.</p>
+
+            <form action="/">
+                <div class="form-field">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="button" id="send-message-button">SEND_MESSAGE →</button>
+            </form>
+        
         </section>
     </main>
 </body>
-</html>
+</html> 
