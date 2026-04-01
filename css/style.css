@@ -323,7 +323,7 @@ header{
     display: flex;
     gap: 2rem;
     padding: 4rem 2rem;
-    background-image: url("/img/home-hero-bg.png");
+    background-image: url("../img/home-hero-bg.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
