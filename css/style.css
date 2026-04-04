@@ -86,15 +86,15 @@ h1, h2, h3 {
     font-weight: var(--fw-bold);}
 h1{
     font-size: clamp(2rem, 5vw, 4.5rem);
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5кem;
 }
 h2{
     font-size: clamp(1.75rem, 4vw, 3.75rem);
-    margin-bottom: 0.45em;
+    margin-bottom: 0.45rem;
 }
 h3{
     font-size: clamp(1.25rem, 3vw, 1.125rem);
-    margin-bottom: 0.4em;
+    margin-bottom: 0.4rem;
 }
 
 p, li{
@@ -171,13 +171,14 @@ section{
 .button{
     display: inline-block;
     width: fit-content;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
     border: none;
     background-color: var(--clr-neutral-900);
     font-family: var(--ff-mono);
     color: var(--clr-neutral-100);
     text-transform: uppercase;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 
     &:hover{
         background-color: var(--clr-accent-400);
@@ -216,7 +217,27 @@ section{
     line-height: 1.75rem;
 }
 
+
 /* -------   FORM ---------*/
+
+input, textarea {
+    border: 1px solid var(--clr-border);
+    padding: 1em;
+    color: var(--clr-neutral-900);
+    font-family: var(--ff-mono);
+
+    &:focus{
+        outline: none;
+        border-color: var(--clr-neutral-900);
+    }
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--clr-pale-300);
+    opacity: 0.5;
+}
+
+
 .form label{
     display: block;
     text-transform: uppercase;
@@ -252,17 +273,11 @@ section{
     padding: 0.5rem;
     border: none;
     background-color: transparent;
-    color: var(--clr-neutral-900);
+
     font-size: var(--fs-500);
-    font-family: var(--ff-mono);
 
     &:focus{
         outline: none;
-    }
-
-    &::placeholder{
-        color: var(--clr-pale-300);
-        opacity: 0.5;
     }
 } 
 
