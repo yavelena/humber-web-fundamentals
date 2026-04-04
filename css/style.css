@@ -8,6 +8,7 @@
     --clr-neutral-900: #0D0D0D;
 
     --clr-body: var(--clr-neutral-500);
+    --clr-body-bg: var(--clr-neutral-200);
     --clr-heading: var(--clr-neutral-900);
     --clr-pale-300: var(--clr-neutral-400);
     --clr-pale-400: var(--clr-neutral-450);
@@ -47,7 +48,7 @@ html {
 }
 body{
     margin: 0;
-    background-color: var(--background);
+    background-color: var(--clr-body-bg);
     color: var(--clr-body);
     font-family: var(--ff-mono);
     font-size: var(--fs-400);
@@ -123,6 +124,10 @@ a{
 
 section{
     padding: 4rem 2rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid var(--clr-border)  ;
  }
 
 
@@ -339,9 +344,6 @@ header{
     gap: 2rem;
     padding: 4rem 2rem;
     background-image: url("../img/home-hero-bg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .col-left{
@@ -413,7 +415,12 @@ header{
 
 /* -------  CONTACTS ---------*/
 
+#contact-form{
+    background-image:
+        linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+        url("../img/home-contact-form-bg.png");
 
+}
 
 
 @media (min-width: 768px)
