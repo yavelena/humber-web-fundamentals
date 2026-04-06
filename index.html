@@ -26,7 +26,7 @@
     <main>
 
        <!-- Two-cols HERO -->
-        <section id="hero" class="adaptive-flex">
+        <section id="hero" class="adaptive-flex fade-in">
             
             <div class="flex-col">
                 <div class="hero-header">
@@ -95,45 +95,29 @@
                 <div class="section-label">
                     <span class="section-label__number">[02] repository</span>
                 </div>
-                <h2>Featured Projects</h2>
-                <p class="narrow-content">Selected engineering projects demonstrationg full-steck capabilities across diverse problem  domains.</p>
+                <div>
+                    <h2>Featured Projects</h2>
+                    <p class="narrow-content">Selected engineering projects demonstrationg full-steck capabilities across diverse problem  domains.</p>
+                </div>
+            </div>
+
+            <div class="project-search flex-row">
+                <label for="project-search" class="visually-hidden">Search projects:</label>
+                <input 
+                    type="search" 
+                    id="project-search-input" 
+                    placeholder="Search projects..." 
+                /> 
+                <button type="button" id="project-search-btn" class="button">Search_</button>
             </div>
             
-            <div class="projects">
-                <article class="project-card flex-col" >
-                    <img src="img/architecture1.png" alt="Project 1" />
-                    <h3>Cloud Infrastructure Dashboard</h3>
-                    <p>Real-time monitoring platform for distributed microservices. Built for scale with live metrics, alert systems, and automated incident response.</p>
-                    <p class="project-techs"><span>React</span> <span>Node.js</span> <span>AWS</span></p>
-                    <p class="project-role ">Role: Full-Stack Developer • <span class="year">2025</span></p>
-                    <a href="#" class="button">VIEW PROJECT →</a>
-                </article>
-                
-                <article class="project-card flex-col">
-                    <img src="img/architecture2.png" alt="Project 2" />
-                    <h3>AI-Powered Code Review Tool</h3>
-                    <p>A machine learning-based code analysis tool that provides real-time feedback and suggestions to developers, improving code quality and reducing review time.</p>
-                    <p class="project-techs"><span>Python</span> <span>TensorFlow</span> <span>Docker</span></p>
-                    <p class="project-role">Role: Lead Developer • <span class="year">2024</span></p>
-                    <a href="#" class="button">VIEW PROJECT →</a>   
-                </article>
-
-                <article class="project-card flex-col">
-                    <img src="img/architecture3.png" alt="Project 3" />
-                    <h3>Project Three</h3>
-                    <p>An e-commerce platform with a microservices architecture, deployed on AWS.</p>
-                    <p class="project-techs"><span>Python</span> <span>Django</span> <span>AWS</span></p>
-                    <p class="project-role">Role: Backend Developer • <span class="year">2023</span></p>
-                    <a href="#" class="button">VIEW PROJECT →</a> 
-
-                </article>
-            </div>
+            <div class="projects" id="projects-container"></div>
         
         </section> 
 
 
        <!-- Contact Form-->
-        <section id="contact-form" class="flex-col big-gap">
+        <section id="contact-form" class="flex-col big-gap fade-in">
 
             <div class="section-header flex-col" >
                 <div class="section-label">
@@ -175,5 +159,8 @@
         
         </section>
     </main>
+
+    <script src="js/projects-db.js"></script>
+    <script src="js/script.js"></script> 
 </body>
 </html> 
