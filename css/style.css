@@ -191,6 +191,24 @@ section{
     }
 }
 
+.fade-in
+{
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+    will-change: opacity, transform;
+}
+
+.fade-in.is-visible
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
 .section-label
 {
     display: flex;
