@@ -1,7 +1,5 @@
 /****** FADE IN EFFECT ********/
 
-const fadeItems = document.querySelectorAll(".fade-in");
-
 const observer = new IntersectionObserver(
     (entries) =>
     {
@@ -38,13 +36,14 @@ const projectsContainer = document.querySelector("#projects-container");
 const searchInput = document.querySelector("#project-search-input");
 const searchButton = document.querySelector("#project-search-btn");
 
+let myProjects = [];
 
 function createProjectCard(project) {
     const techsHtml = project.techs.map(tech => `<span>${tech}</span>`).join("");
 
     return `
-        <article class="project-card flex-col fade-in" style="--delay: 0.12}s;">
-            <img src="${project.image}" alt="${project.alt}" class="fade-in"/>
+        <article class="project-card flex-col fade-in" style="--delay: 0.12s;">
+            <img src="${project.image}" alt="${project.alt}"/>
             <h3>${project.title}</h3>
             <p>${project.description}</p>
             <p class="project-techs">${techsHtml}</p>
@@ -93,17 +92,46 @@ function filterProjects(searchText) {
     );
 }
 
-const Search = () =>
+const handleSearch = () =>
 {
     const searchText = searchInput.value;
     const filteredProjects = filterProjects(searchText);
     renderProjects(filteredProjects);
 }
 
-searchInput.addEventListener("input", Search);
-searchButton.addEventListener("click", Search);
+function renderLoadError()
+{
+    projectsContainer.innerHTML = `
+        <div class="projects-empty-state fade-in is-visible">
+            <span class="projects-empty-state__label">[LOAD_ERROR]</span>
+            <h3>Unable to load projects.</h3>
+            <p>Please check the JSON file path and try again.</p>
+        </div>
+    `;
+}
 
-renderProjects(myProjects);
+async function loadProjects() {
+    try {
+        const response = await fetch("data/projects.json");  
+        console.log("Fetching projects data from JSON...");
+        if (!response.ok) {
+            throw new Error(`HTTP data load error! status: ${response.status}`);
+        }
+        myProjects = await response.json();
+        console.log("Projects data loaded successfully:", myProjects);
+        renderProjects(myProjects);
+    } catch (error) {
+        console.error("Error loading projects:", error);
+        renderLoadError();
+    }
+}
 
+
+searchInput.addEventListener("input", handleSearch);
+searchButton.addEventListener("click", handleSearch);
+
+loadProjects();
+
+attachFadeObserver();
 
 
