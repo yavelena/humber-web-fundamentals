@@ -1,4 +1,4 @@
-const myProjects =
+const myProjects_old_delete =
 [
     {
         title: "Cloud Infrastructure Dashboard",
